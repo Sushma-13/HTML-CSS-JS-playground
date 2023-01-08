@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-const uselocalStorage = (key: string, initialValue: string) => {
+const uselocalStorage = (
+  key: string,
+  initialValue: string
+): [string, React.Dispatch<React.SetStateAction<string>>] => {
   const [val, setVal] = useState(localStorage.getItem(key) || initialValue);
   useEffect(() => {
     localStorage.setItem(key, val);

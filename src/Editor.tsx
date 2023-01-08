@@ -29,7 +29,6 @@ export default function Editor({
         options={{
           mode: language,
           lineWrapping: true,
-          lint: true,
           theme: 'material',
           lineNumbers: true,
         }}
