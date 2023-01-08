@@ -1,23 +1,23 @@
-import React from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2-react-17';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
-import 'codemirror/mode/xml/xml';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/mode/css/css';
-import './style.css';
+import React, { memo } from "react";
+import { Controlled as CodeMirror } from "react-codemirror2-react-17";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import "codemirror/mode/xml/xml";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/css/css";
+import "./style.css";
 
-export default function Editor({
+const Editor = ({
   language,
   onChange,
   value,
   name,
 }: {
-  language: 'xml' | 'css' | 'js';
+  language: "xml" | "css" | "js";
   onChange: any;
   value: string;
   name: string;
-}) {
+}) => {
   return (
     <div className="editor">
       <div className="name">{name}</div>
@@ -29,10 +29,12 @@ export default function Editor({
         options={{
           mode: language,
           lineWrapping: true,
-          theme: 'material',
+          theme: "material",
           lineNumbers: true,
         }}
       />
     </div>
   );
-}
+};
+
+export default memo(Editor);

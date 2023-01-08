@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Editor from './Editor';
-import uselocalStorage from './LocalStorageHook';
-import './style.css';
+import React, { useState, useEffect } from "react";
+import Editor from "./Editor";
+import uselocalStorage from "./LocalStorageHook";
+import "./style.css";
+import Output from "./Output";
 
 export default function App() {
-  const [html, setHtml] = uselocalStorage('html', '<p>Hey!</p>');
+  const [html, setHtml] = uselocalStorage("html", "<p>Hey!</p>");
   const [css, setCss] = uselocalStorage(
-    'css',
+    "css",
     `p {
     text-align: center;
     }`
   );
-  const [js, setJs] = uselocalStorage('js', '');
-  const [srcDoc, setSourceDoc] = useState('');
+  const [js, setJs] = uselocalStorage("js", "");
+  const [srcDoc, setSourceDoc] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,7 +24,7 @@ export default function App() {
         <script>${js}</script>
       </html>
       `);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, [html, css, js]);
 
@@ -51,14 +52,7 @@ export default function App() {
         />
       </div>
       <h5>Output</h5>
-      <iframe
-        width="100%"
-        height="100%"
-        frameBorder="0"
-        title="Result"
-        srcDoc={srcDoc}
-        className="iframe"
-      />
+      <Output srcDoc={srcDoc} />
     </div>
   );
 }
