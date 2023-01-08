@@ -1,0 +1,66 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #3c4453;
+}
+
+h5 {
+  text-align: center;
+  margin: 10px;
+  text-decoration: underline;
+  color: white;
+}
+
+.playground {
+  height: 100vh;
+  padding: 5px;
+}
+
+.editors-container {
+  display: flex;
+}
+
+.editor {
+  flex-grow: 1;
+  margin-right: 2px;
+  min-width: 100px;
+  /* resize: horizontal;
+  overflow: auto; */
+}
+
+.editor:last-child {
+  margin-right: 0;
+}
+
+.CodeMirror {
+  height: 50vh;
+}
+
+.name {
+  border: 1px solid none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+  padding: 5px;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+}
+
+.iframe {
+  height: 50vh;
+  background-color: white;
+  resize: both;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(225, 8%, 30%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
